@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy import interpolate
-import shapely.geometry as geom
 import random
 
 fig, ax = plt.subplots()

@@ -38,7 +38,17 @@ def bell_function(x, y, intensity=1, dec_rate=[0.5, 0.5]):
     scalar_field = intensity*np.exp(-dec_rate[0] * x**2 - dec_rate[1] * y**2)
     return scalar_field
 
-sc_plot = ax.scatter(x_p, y_p, c=bell_function(x_p, y_p, 5400, [10, 10])) 
+intensity_centrums_x = [-0.5, 0.5, -0.4, 0.0, 0.4]
+intensity_centrums_y = [-0.3, 0.3, -0.5, -0.7, -0.5]
+intensity_values = [1.7, 1.7, 1, 0.7, 1]
+
+def scalar_function(x, y, int_cen_x, int_cen_y, int_vel):
+    scalar_field = 0
+    for i in range(0, len(int_cen_x)):
+        scalar_field += int_vel[i] * bell_function(x - int_cen_x[i], y - int_cen_y[i], 30, [5, 5])
+    return scalar_field
+
+sc_plot = ax.scatter(x_p, y_p, c=scalar_function(x_p, y_p, 5400, [10, 10])) 
 
 ax.set_xlabel('Координата x, м')
 ax.set_ylabel('Координата y, м')
@@ -46,4 +56,4 @@ ax.set_ylabel('Координата y, м')
 cbar = fig.colorbar(sc_plot)
 cbar.set_label('Интенсивность скалярного поля, *C')
 plt.axis('equal')
-plt.savefig("bell_function.png")
+plt.savefig("complex_scalar_fields.png")
