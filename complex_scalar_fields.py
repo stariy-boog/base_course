@@ -39,7 +39,7 @@ def bell_function(x, y, intensity=1, dec_rate=[0.5, 0.5]):
     return scalar_field
 
 intensity_centrums_x = [-0.5, 0.5, -0.4, 0.0, 0.4]
-intensity_centrums_y = [-0.3, 0.3, -0.5, -0.7, -0.5]
+intensity_centrums_y = [0.3, 0.3, -0.5, -0.7, -0.5]
 intensity_values = [1.7, 1.7, 1, 0.7, 1]
 
 def scalar_function(x, y, int_cen_x, int_cen_y, int_vel):
