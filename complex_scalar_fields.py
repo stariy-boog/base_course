@@ -48,12 +48,17 @@ def scalar_function(x, y, int_cen_x, int_cen_y, int_vel):
         scalar_field += int_vel[i] * bell_function(x - int_cen_x[i], y - int_cen_y[i], 30, [5, 5])
     return scalar_field
 
-sc_plot = ax.scatter(x_p, y_p, c=scalar_function(x_p, y_p, 5400, [10, 10])) 
+scalar_fields = []
+for i in range(0, len(x_p)):
+    calculate = scalar_function(x_p[i], y_p[i], intensity_centrums_x, intensity_centrums_y, intensity_values)
+    scalar_fields.append(calculate)
+
+sc_plot = ax.scatter(x_p, y_p, c=scalar_fields) 
 
 ax.set_xlabel('Координата x, м')
 ax.set_ylabel('Координата y, м')
 
 cbar = fig.colorbar(sc_plot)
-cbar.set_label('Интенсивность скалярного поля, *C')
+cbar.set_label('Интенсивность скалярного поля')
 plt.axis('equal')
 plt.savefig("complex_scalar_fields.png")
