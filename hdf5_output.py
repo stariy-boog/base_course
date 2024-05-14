@@ -47,11 +47,11 @@ gas_coords = np.zeros((gas_part_num, 3), dtype=float_type)
 gas_vel = np.zeros([gas_part_num, 3], dtype=float_type)
 gas_mass = np.ones(gas_part_num, dtype=float_type)
 
-# for i in range(len(x_p)):
-#     gas_coords[i][0] = x_p / picture_size + box_size / 2
-#     gas_coords[i][1] = y_p / picture_size + box_size / 2
-#     gas_vel[i][0] = float_type(0.001)
-#     gas_vel[i][1] = float_type(0)
+for i in range(len(x_p)):
+    gas_coords[i, 0] = x_p[i] / picture_size + box_size / 2
+    gas_coords[i][1] = y_p[i] / picture_size + box_size / 2
+    gas_vel[i][0] = float_type(0.001)
+    gas_vel[i][1] = float_type(0)
     
 IC = h5py.File('IC.hdf5', 'w')
 header = IC.create_group('Header')
