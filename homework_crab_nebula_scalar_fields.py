@@ -115,11 +115,11 @@ def bell_function(x, y, intensity=1, dec_rate=[0.5, 0.5]):
     scalar_field = intensity*np.exp(-dec_rate[0] * x**2 - dec_rate[1] * y**2)
     return scalar_field
 
-intensity_centrums_x = [-350, -150, 480, 520, -500, -10, 200, 300, 450, -400, -50, -500, 200, 0]            
+intensity_centrums_x = [-350, -150, 480, 520, -500, -10, 200, 300, 450, -400, -50, -500, 200, 0, 200]            
 
-intensity_centrums_y = [0, 125, 300, 0, 450, 500, -400, -250, -50, -200, -600, -150, 200, -200]
+intensity_centrums_y = [0, 125, 300, 0, 450, 500, -400, -250, -50, -200, -600, -150, 200, -200, 400]
 
-intensity_values = [90, 90, 100, 100, 70, 70, 70, -10, 10, -10, -10, -10, 50, 10]
+intensity_values = [90, 90, 100, 100, 70, 70, 70, -10, 10, -10, -10, -10, 50, 10, -50]
 
 def scalar_function(x, y, int_cen_x, int_cen_y, int_vel):
     scalar_field = 0
