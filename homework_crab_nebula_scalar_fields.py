@@ -293,6 +293,76 @@ def y_void_coords_1():
 
     return y
 
+def x_void_coords_2():
+    t = np.linspace(np.pi/20, -np.pi/6, 100)
+    x1 = 380 + 180 * np.cos(t)
+    y1 = -250 - 230 * np.sin(t)
+
+    t = np.linspace(np.pi/30, -np.pi/4, 100)
+    x2 = 330 + 200 * np.cos(t)
+    y2 = 85 - 310 * np.sin(t)
+
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
+
+    t = np.linspace(np.pi/2, np.pi, 100)
+    x1 = 475 + 80 * np.cos(t)
+    y1 = 220 + 80 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(np.pi/2, -np.pi/3, 100)
+    x1 = 400 + 60 * np.cos(t)
+    y1 = 120 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/2, np.pi/16, 100)
+    x1 = 470 + 60 * np.cos(t)
+    y1 = 100 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    return x
+
+def y_void_coords_2():
+    t = np.linspace(np.pi/20, -np.pi/6, 100)
+    x1 = 380 + 180 * np.cos(t)
+    y1 = -250 - 230 * np.sin(t)
+
+    t = np.linspace(np.pi/30, -np.pi/4, 100)
+    x2 = 330 + 200 * np.cos(t)
+    y2 = 85 - 310 * np.sin(t)
+
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
+
+    t = np.linspace(np.pi/2, np.pi, 100)
+    x1 = 475 + 80 * np.cos(t)
+    y1 = 220 + 80 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(np.pi/2, -np.pi/3, 100)
+    x1 = 400 + 60 * np.cos(t)
+    y1 = 120 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/2, np.pi/16, 100)
+    x1 = 470 + 60 * np.cos(t)
+    y1 = 100 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    return y
+
 def make_curve(x, y):
     spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
     spline_curve = interpolate.splev(figure_spline_part, spline_coords)
@@ -307,9 +377,12 @@ def make_curve(x, y):
 
 curve_coords, points_coords = make_curve(x_cloud_coords(), y_cloud_coords())
 first_void_curve, first_void_points = make_curve(x_void_coords_1(), y_void_coords_1())
+second_void_curve, second_void_point = make_curve(x_void_coords_2(), y_void_coords_2())
 
+second_void_polygon = geom.Polygon(second_void_curve)
 first_void_polygon = geom.Polygon(first_void_curve)
 cloud_polygon = geom.Polygon(curve_coords)
+
 points_number_per_side = 50
 x_pictures_limits = [-650, 650]
 y_pictures_limits = [650, -650]
@@ -319,6 +392,8 @@ for x_point_coord in np.linspace(*x_pictures_limits, points_number_per_side):
     for y_point_coord in np.linspace(*y_pictures_limits, points_number_per_side):
         p = geom.Point(x_point_coord, y_point_coord)
         if p.within(first_void_polygon):
+            continue
+        elif p.within(second_void_polygon):
             continue
         elif p.within(cloud_polygon):
             points_coords.append(x_point_coord)
@@ -332,7 +407,7 @@ def bell_function(x, y, intensity=1, dec_rate=[0.5, 0.5]):
     scalar_field = intensity*np.exp(-dec_rate[0] * x**2 - dec_rate[1] * y**2)
     return scalar_field
 
-intensity_centrums_x = [-350, -150, 480, 520, -500, -10, 200, 300, 450, -400, -50, -500, 200, 0, 200]            
+intensity_centrums_x = [-350, -150, 420, 490, -500, -10, 200, 300, 450, -400, -50, -500, 200, 0, 200]            
 
 intensity_centrums_y = [0, 125, 300, 0, 450, 500, -400, -250, -50, -200, -600, -150, 200, -200, 400]
 
