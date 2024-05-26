@@ -7,107 +7,324 @@ image = plt.imread('crab.png')
 fig, ax = plt.subplots()
 ax.imshow(image, extent=[-650, 650, 650, -650])
 
+def x_cloud_coords():
+    t = np.linspace(np.pi, np.pi/2.5, 100)
+    x1 = -250 + 180 * np.cos(t)
+    y1 = -150 - 220 * np.sin(t)
+    x2 = -230
+    y2 = -410
 
-t = np.linspace(np.pi, np.pi/2.5, 100)
-x1 = -250 + 180 * np.cos(t)
-y1 = -150 - 220 * np.sin(t)
-x2 = -230
-y2 = -410
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
 
-x = np.append(x1, x2)
-y = np.append(y1, y2)
+    x1 = -190
+    y1 = -420
 
-x1 = -190
-y1 = -420
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(np.pi, np.pi/8, 100)
+    x1 = -50 + 150 * np.cos(t)
+    y1 = -450 - 180 * np.sin(t)
 
-t = np.linspace(np.pi, np.pi/8, 100)
-x1 = -50 + 150 * np.cos(t)
-y1 = -450 - 180 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(np.pi*2/3, np.pi/20, 100)
+    x1 =  350 + 180 * np.cos(t)
+    y1 = -350 - 230 * np.sin(t)
 
-t = np.linspace(np.pi*2/3, np.pi/20, 100)
-x1 =  350 + 180 * np.cos(t)
-y1 = -350 - 230 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(np.pi/6, -np.pi/6, 100)
+    x1 = 380 + 180 * np.cos(t)
+    y1 = -250 - 230 * np.sin(t)
 
-t = np.linspace(np.pi/6, -np.pi/6, 100)
-x1 = 380 + 180 * np.cos(t)
-y1 = -250 - 230 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(np.pi/30, -np.pi*2/3, 100)
+    x1 = 330 + 200 * np.cos(t)
+    y1 = 85 - 310 * np.sin(t)
 
-t = np.linspace(np.pi/30, -np.pi*2/3, 100)
-x1 = 330 + 200 * np.cos(t)
-y1 = 85 - 310 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(-np.pi/6, -np.pi*11/18, 100)
+    x1 = -210 + 500 * np.cos(t)
+    y1 = 220 - 300 * np.sin(t)
 
-t = np.linspace(-np.pi/6, -np.pi*11/18, 100)
-x1 = -210 + 500 * np.cos(t)
-y1 = 220 - 300 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    x1 = -385
+    y1 = 450
 
-x1 = -385
-y1 = 450
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(-np.pi/3, -np.pi*5/4, 100)
+    x1 = -465 + 160 * np.cos(t)
+    y1 = 300 - 150 * np.sin(t)
 
-t = np.linspace(-np.pi/3, -np.pi*5/4, 100)
-x1 = -465 + 160 * np.cos(t)
-y1 = 300 - 150 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    t = np.linspace(-np.pi*7/9, -np.pi*277/180, 100)
+    x1 = -450 + 160 * np.cos(t)
+    y1 = 50 - 163 * np.sin(t)
 
-t = np.linspace(-np.pi*7/9, -np.pi*277/180, 100)
-x1 = -450 + 160 * np.cos(t)
-y1 = 50 - 163 * np.sin(t)
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    x1 = -430
+    y1 = -150
 
-x1 = -430
-y1 = -150
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+    return x
+def y_cloud_coords():
+    t = np.linspace(np.pi, np.pi/2.5, 100)
+    x1 = -250 + 180 * np.cos(t)
+    y1 = -150 - 220 * np.sin(t)
+    x2 = -230
+    y2 = -410
 
-x = np.append(x, x1)
-y = np.append(y, y1)
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
 
-spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
-spline_curve = interpolate.splev(figure_spline_part, spline_coords)
+    x1 = -190
+    y1 = -420
 
-plt.axis('equal')
-plt.plot(spline_curve[0], spline_curve[1], 'w')
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-curve_coords = []
-points_coords = []
+    t = np.linspace(np.pi, np.pi/8, 100)
+    x1 = -50 + 150 * np.cos(t)
+    y1 = -450 - 180 * np.sin(t)
 
-for i in range(len(spline_curve[0])):
-    curve_coords.append([spline_curve[0][i], spline_curve[1][i]])
+    x = np.append(x, x1)
+    y = np.append(y, y1)
 
-polygon = geom.Polygon(curve_coords)
+    t = np.linspace(np.pi*2/3, np.pi/20, 100)
+    x1 =  350 + 180 * np.cos(t)
+    y1 = -350 - 230 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(np.pi/6, -np.pi/6, 100)
+    x1 = 380 + 180 * np.cos(t)
+    y1 = -250 - 230 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(np.pi/30, -np.pi*2/3, 100)
+    x1 = 330 + 200 * np.cos(t)
+    y1 = 85 - 310 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/6, -np.pi*11/18, 100)
+    x1 = -210 + 500 * np.cos(t)
+    y1 = 220 - 300 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -385
+    y1 = 450
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/3, -np.pi*5/4, 100)
+    x1 = -465 + 160 * np.cos(t)
+    y1 = 300 - 150 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi*7/9, -np.pi*277/180, 100)
+    x1 = -450 + 160 * np.cos(t)
+    y1 = 50 - 163 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -430
+    y1 = -150
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+    return y
+
+def x_void_coords_1():
+    t = np.linspace(-np.pi/4, np.pi/6, 100)
+    x1 = -80 + 50 * np.cos(t)
+    y1 = 340 - 70 * np.sin(t)
+
+    t = np.linspace(np.pi/2, -np.pi, 100)
+    x2 = 100 * np.cos(t)
+    y2 = 200 + 100 * np.sin(t)
+
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
+
+    t = np.linspace(0 , np.pi/2, 100)
+    x1 = -251 + 150 * np.cos(t)
+    y1 = 200 + 50 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/2.5, -np.pi*3/4, 100)
+    x1 = -330 + 250 * np.cos(t)
+    y1 = 485 + 250 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -505
+    y1 = 445
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi*4/3, -np.pi*5/3, 100)
+    x1 = -450 + 100 * np.cos(t)
+    y1 = 350 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -385
+    y1 = 450
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -380
+    y1 = 500
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi*11/18, -np.pi/6, 100)
+    x1 = -210 + 500 * np.cos(t)
+    y1 = 220 - 300 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -40
+    y1 = 390
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    return x
+def y_void_coords_1():
+    t = np.linspace(-np.pi/4, np.pi/6, 100)
+    x1 = -80 + 50 * np.cos(t)
+    y1 = 340 - 70 * np.sin(t)
+
+    t = np.linspace(np.pi/2, -np.pi, 100)
+    x2 = 100 * np.cos(t)
+    y2 = 200 + 100 * np.sin(t)
+
+    x = np.append(x1, x2)
+    y = np.append(y1, y2)
+
+    t = np.linspace(0 , np.pi/2, 100)
+    x1 = -251 + 150 * np.cos(t)
+    y1 = 200 + 50 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi/2.5, -np.pi*3/4, 100)
+    x1 = -330 + 250 * np.cos(t)
+    y1 = 485 + 250 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -505
+    y1 = 445
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi*4/3, -np.pi*5/3, 100)
+    x1 = -450 + 100 * np.cos(t)
+    y1 = 350 + 100 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -385
+    y1 = 450
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -380
+    y1 = 500
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    t = np.linspace(-np.pi*11/18, -np.pi/6, 100)
+    x1 = -210 + 500 * np.cos(t)
+    y1 = 220 - 300 * np.sin(t)
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    x1 = -40
+    y1 = 390
+
+    x = np.append(x, x1)
+    y = np.append(y, y1)
+
+    return y
+
+def make_curve(x, y):
+    spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
+    spline_curve = interpolate.splev(figure_spline_part, spline_coords)
+
+    plt.plot(spline_curve[0], spline_curve[1], 'w')
+    curve = []
+    points = []
+    for i in range(len(spline_curve[0])):
+        curve.append([spline_curve[0][i], spline_curve[1][i]])
+
+    return curve, points
+
+curve_coords, points_coords = make_curve(x_cloud_coords(), y_cloud_coords())
+first_void_curve, first_void_points = make_curve(x_void_coords_1(), y_void_coords_1())
+
+first_void_polygon = geom.Polygon(first_void_curve)
+cloud_polygon = geom.Polygon(curve_coords)
 points_number_per_side = 50
 x_pictures_limits = [-650, 650]
 y_pictures_limits = [650, -650]
+void_points = 0
 
 for x_point_coord in np.linspace(*x_pictures_limits, points_number_per_side):
     for y_point_coord in np.linspace(*y_pictures_limits, points_number_per_side):
         p = geom.Point(x_point_coord, y_point_coord)
-        if p.within(polygon):
+        if p.within(first_void_polygon):
+            continue
+        elif p.within(cloud_polygon):
             points_coords.append(x_point_coord)
             points_coords.append(y_point_coord)
-
+        
+#SCALAR FIELDS
 x_p = np.array(points_coords[0::2])
 y_p = np.array(points_coords[1::2])
 
@@ -132,10 +349,17 @@ for i in range(0, len(x_p)):
     calculate = scalar_function(x_p[i], y_p[i], intensity_centrums_x, intensity_centrums_y, intensity_values)
     scalar_fields.append(calculate)
 
+
 sc_plot = ax.scatter(x_p, y_p, c=scalar_fields) 
 
 ax.set_xlabel('Координата x, 43.7*10^9 световых лет')
 ax.set_ylabel('Координата y, 43.7*10^9 световых лет')
+
+#VECTORS
+#x, y = 
+#u = x 
+#v = y 
+#plt.quiver(x, y, u, v, width=0.005)
 
 cbar = fig.colorbar(sc_plot)
 cbar.set_label('Излучение радиоволн (Интенсивность)')
