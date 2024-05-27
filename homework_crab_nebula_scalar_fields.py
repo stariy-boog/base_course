@@ -431,10 +431,74 @@ ax.set_xlabel('Координата x, 43.7*10^9 световых лет')
 ax.set_ylabel('Координата y, 43.7*10^9 световых лет')
 
 #VECTORS
-#x, y = 
-#u = x 
-#v = y 
-#plt.quiver(x, y, u, v, width=0.005)
+x, y = np.meshgrid(np.linspace(-650, -500, 4), np.linspace(200, 400, 4))
+u = -3
+v = 8
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(-600, -450, 5), np.linspace(-200, 150, 5))
+u = -4
+v = 5
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(-400, -300, 3), np.linspace(-400, 0, 4))
+u = 2
+v = 10
+plt.quiver(x, y, u, v, width=0.005)
+x, y = np.meshgrid(np.linspace(-250, -150, 3), np.linspace(-400, 0, 4))
+u = -5
+v = 10
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(-350, -200, 3), np.linspace(50, 200, 3))
+u = -10
+v = 4
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(-100, -100, 1), np.linspace(-600, 100, 10))
+u = -2
+v = 5
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(-50, -50, 1), np.linspace(-600, 100, 10))
+u = 2
+v = 3
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(0, 0, 1), np.linspace(-600, 100, 10))
+u = 2
+v = 2
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(100, 100, 1), np.linspace(-200, 100, 4))
+u = 0
+v = 3
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(100, 100, 1), np.linspace(-450, -300, 3))
+u = -5
+v = 5
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(150, 225, 2), np.linspace(250, -300, 6))
+u = 4
+v = 3
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(175, 500, 6), np.linspace(-600, -400, 3))
+u = -10
+v = 8
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(350, 525, 3), np.linspace(-350, 400, 9))
+u = -10
+v = 12
+plt.quiver(x, y, u, v, width=0.005)
+
+x, y = np.meshgrid(np.linspace(0, 200, 3), np.linspace(340, 380, 2))
+u = 10
+v = 14
+plt.quiver(x, y, u, v, width=0.005)
 
 cbar = fig.colorbar(sc_plot)
 cbar.set_label('Излучение радиоволн (Интенсивность)')
