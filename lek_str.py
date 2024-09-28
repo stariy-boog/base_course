@@ -9,6 +9,6 @@ print(a *3 )
 
 c = 50
 d = 10
-print('pupokk {10} {50}')
+print(f'Вставим числа {c} и {d}')
 
 print(len(a))
