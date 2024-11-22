@@ -1,14 +1,15 @@
 import numpy as np
+N = int(input('Значение:'))
+M = int(input('Значение:'))
+trigonometry_array = np.zeros((N, M))
+for i in range(0,N):
+    for j in range(0, M):
+        trigonometry_array[i,j] = np.sin(N * i + M * j + 1)
+    if trigonometry_array[i,j] < 0:    
+        trigonometry_array[i,j] = 0
 
-
-arr = np.array([[1,2,3],[4,5,6],[7,8,9]])
-
-
-column_index_1 = 0
-column_index_2 = 2
-
-
-arr[:,[column_index_1, column_index_2]] = arr[:,[column_index_2, column_index_1]]
-
-
-print(arr)
+n = int(input('Выберете первый столбец:'))
+m = int(input('Выберете второй столбец:'))
+for i in range(0,N):
+    trigonometry_array[i, n- 1], trigonometry_array[i, m - 1] = trigonometry_array[i, m - 1], trigonometry_array[i, n - 1]
+    print(trigonometry_array)
