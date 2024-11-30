@@ -12,5 +12,5 @@ while 1:
     if a == '':
         break
     a = int(a)
-    array - np.append(array, [a])    
+    array = np.append(array, [a])    
 print(multiply(array))

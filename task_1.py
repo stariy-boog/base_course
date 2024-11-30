@@ -15,4 +15,3 @@ while 1:
     array = np.append(array, [a])
     print(average(array))
     print(np.mean(array))
-    
