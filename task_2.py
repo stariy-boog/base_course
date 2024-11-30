@@ -17,8 +17,8 @@ max_lower = max(ascii_lower)
 min_lower = min(ascii_lower)
 
 
-print("Наибольшее значение ", max_upper) #verxniy
-print("Наименьшее значение ", min_upper)# nizniy
+print("Наибольшее значение верхнего ригистра ", max_upper) #verxniy
+print("Наименьшее значение нижнего регистра ", min_upper)# nizniy
 
-print("Наибольшее значение ", max_lower)#verxniy
-print("Наименьшее значение ", min_lower)# nizniy
+print("Наибольшее значение верхниго ", max_lower)#verxniy
+print("Наименьшее значение нижнего ", min_lower)# nizniy
