@@ -1,8 +1,17 @@
 import matplotlib.pyplot as plt
 import numpy as np
-def hyperbola_plot(x_min, x_max, N)
-x = np.linspace(x_min, x_max, N)
-y = 1/x
-plt.xlabel('Coord: x') 
-plt.ylabel('Coord: y') 
-plt.title('Hyperbola')
+def hyperbola_plot( x_min, x_max, N):
+    x = np.linspace(x_min, x_max, N)
+    y = 1/x
+    plt.plot(x,y)
+    plt.xlabel('x') 
+    plt.ylabel('y') 
+    plt.title('hyperbola')
+    plt.show()
+
+
+x_min = -10
+x_max = 10
+N = 100
+hyperbola_plot( b, x_min, x_max, N)
+plt.savefig('fig_8.png')
