@@ -7,11 +7,12 @@ def hyperbola_plot( x_min, x_max, N):
     plt.xlabel('x') 
     plt.ylabel('y') 
     plt.title('hyperbola')
+    plt.axis('equal')
     plt.show()
 
 
 x_min = -10
 x_max = 10
 N = 100
-hyperbola_plot( b, x_min, x_max, N)
-plt.savefig('fig_8.png')
+hyperbola_plot(  x_min, x_max, N)
+plt.savefig('fig_81.png')
