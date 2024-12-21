@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 def hyperbola_plot( x_min, x_max, N):
     x = np.linspace(x_min, x_max, N)
+    x != 0
     y = 1/x
     plt.plot(x,y)
     plt.xlabel('x') 
