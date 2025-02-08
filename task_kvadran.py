@@ -9,6 +9,5 @@ y = np.array([-a/2, -a/2, a/2, a/2, -a/2])
 fig, ax = plt.subplots()
 ax.set_xlim(-a*1.5, a*1.5)
 ax.set_ylim(-a*1.5, a*1.5)
-ax.set_aspect('equal')
 line, = ax.plot([], [], lw=2)
 

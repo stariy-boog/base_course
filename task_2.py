@@ -4,6 +4,7 @@ from matplotlib.animation import FuncAnimation
 
 alpha = 1
 t = np.linspace(0, 10, 100)
+
 phi = np.linspace(0, 2 * np.pi, 100)
 
 fig, ax = plt.subplots()
